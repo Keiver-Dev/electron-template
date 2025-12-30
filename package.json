@@ -1,0 +1,60 @@
+{
+  "name": "electron-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm run frontend:dev\" \"npm run electron:dev\"",
+    "frontend:dev": "cd frontend && npm run dev",
+    "electron:dev": "wait-on tcp:5173 && cross-env NODE_ENV=development electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0",
+    "electron": "39.2.7",
+    "standard": "17.1.2",
+    "wait-on": "^9.0.3"
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "rules": {
+      "quotes": [
+        "warn",
+        "double"
+      ],
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "no-unused-vars": "warn",
+      "no-console": "off",
+      "space-before-function-paren": [
+        "error",
+        {
+          "anonymous": "always",
+          "named": "never",
+          "asyncArrow": "always"
+        }
+      ],
+      "comma-dangle": [
+        "warn",
+        "only-multiline"
+      ],
+      "indent": [
+        "warn",
+        2
+      ],
+      "no-multiple-empty-lines": [
+        "warn",
+        {
+          "max": 2
+        }
+      ]
+    }
+  }
+}
